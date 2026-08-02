@@ -7,17 +7,71 @@ import { getMediaUrl } from '../utils/media';
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
   activePage?: string;
+  image?: string;
+  type?: string;
+  articleMeta?: {
+    publishedTime?: string;
+    author?: string;
+  };
 }
 
 const {
   title = "Western Traders | Global Textile Sourcing, Indenting & Trading",
   description = "Western Traders - Established in 2002. Leading corporate sourcing firm for textile yarns, fibers, fabrics, denim, and apparel accessories with global collaborations.",
-  activePage = "home"
+  keywords = "textile sourcing, yarn indenting, raw cotton, synthetic yarn, Intercot SA, QST Industries, Naveena Industries, textile trading Pakistan, denim sourcing, recycled polyester yarn, Western Group",
+  activePage = "home",
+  image = getMediaUrl("/images/wt_header_logo.png"),
+  type = "website"
 } = Astro.props;
 
 const faviconUrl = getMediaUrl("/images/favicon-32.png");
-const ogImageUrl = getMediaUrl("/images/wt_header_logo.png");
+const ogImageUrl = image;
+const siteUrl = Astro.site ? Astro.site.origin : "https://www.western.com.pk";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "Western Traders",
+      "legalName": "Western Traders",
+      "url": siteUrl,
+      "logo": getMediaUrl("/images/wt_header_logo.png"),
+      "foundingDate": "2002",
+      "description": description,
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+92-42-35770064",
+          "contactType": "customer service",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Urdu"]
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office # 4, 2nd Floor, Commercial Plaza, Cavalry Ground",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "postalCode": "54660",
+        "addressCountry": "PK"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Western Traders",
+      "publisher": {
+        "@id": `${siteUrl}/#organization`
+      }
+    }
+  ]
+};
 ---
 
 <!html>
@@ -28,16 +82,34 @@ const ogImageUrl = getMediaUrl("/images/wt_header_logo.png");
     <link rel="icon" type="image/png" href={faviconUrl} />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Western Traders" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -3,7 +3,14 @@ import Layout from '../../layouts/Layout.astro';
 import { getMediaUrl } from '../../utils/media';
 ---
 
-<Layout title="Interview of CEO Mr Hasan Shahid by Ms Alex Diaz | Western Traders News" activePage="news">
+<Layout
+  title="Interview of CEO Mr. Hasan Shahid by Ms. Alex Diaz | Western Traders"
+  description="Exclusive interview of Western Traders CEO Mr. Hasan Shahid by Ms. Alex Diaz discussing global corporate textile sourcing, yarn indenting trends, and international trade strategy."
+  keywords="Hasan Shahid interview, Alex Diaz textile whitepaper, CEO interview Western Traders, global yarn sourcing, textile indenting market leadership"
+  image={getMediaUrl("/images/news_interview.png")}
+  type="article"
+  activePage="news"
+>
   <!-- Top Hero Banner -->
   <section class="page_hero_banner">
     <div class="container">
