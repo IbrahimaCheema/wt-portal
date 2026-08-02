@@ -1,6 +1,7 @@
 # build output
 dist/
 .astro/
+.wrangler/
 
 # dependencies
 node_modules/
@@ -20,3 +21,7 @@ yarn-error.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# Large media served from Cloudflare R2 bucket (docs.western.com.pk)
+public/videos/
+
