@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy | Western Traders" activePage="privacy">
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span class="current">Privacy Policy</span>
+      </div>
+      <h1 class="hero_page_title">Privacy Policy</h1>
+      <p class="hero_subtitle">
+        Western Traders is committed to protecting client data privacy and corporate communication security.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="card privacy-card">
+        <h2>Data Protection Commitment</h2>
+        <p>
+          Western Traders ("WT") values your business privacy. Any information submitted via our corporate callback forms, quotation requests, or email inquiries is strictly used for order processing, indenting administration, and client relationship management.
+        </p>
+
+        <h3>1. Information Collection</h3>
+        <p>
+          We collect basic corporate contact details including full names, company email addresses, phone numbers, and specific yarn/fiber indenting specifications submitted voluntarily through our web portal.
+        </p>
+
+        <h3>2. Use of Information</h3>
+        <p>
+          Collected data is exclusively utilized to respond to customer inquiries, coordinate with authorized spinning mills (such as Intercot S.A. and Naveena Industries), and fulfill international trade documentation. We do not sell, rent, or lease client information to third parties.
+        </p>
+
+        <h3>3. Contact Us</h3>
+        <p>
+          If you have questions regarding this privacy statement, please contact us at <a href="mailto:info@western.com.pk">info@western.com.pk</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 5rem 0; }
+    .privacy-card { padding: 3rem; }
+    .privacy-card h2, .privacy-card h3 { color: var(--primary-navy); margin-bottom: 1rem; margin-top: 1.5rem; }
+    .privacy-card h2:first-child { margin-top: 0; }
+    .privacy-card p { color: var(--text-muted); line-height: 1.7; font-size: 1rem; }
+  </style>
+</Layout>

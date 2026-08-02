@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Business Work Principles | Western Traders" activePage="principles">
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span class="current">Business Work Principles</span>
+      </div>
+      <h1 class="hero_page_title">Business Work Principles</h1>
+      <p class="hero_subtitle">
+        The fundamental ethical codes, operational standards, and client-first principles governing Western Traders.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="principles-grid">
+        <div class="card principle-card">
+          <div class="p-num">01</div>
+          <h3>Absolute Professionalism</h3>
+          <p>We approach every customer inquiry with utmost seriousness, clear communication, and dedicated account management from order inception to final delivery.</p>
+        </div>
+
+        <div class="card principle-card">
+          <div class="p-num">02</div>
+          <h3>Proactive Market Adaptation</h3>
+          <p>We continuously monitor global fiber pricing, supply chain shifts, and technological advancements to keep our buyers ahead of market changes.</p>
+        </div>
+
+        <div class="card principle-card">
+          <div class="p-num">03</div>
+          <h3>Quality Assurance & Integrity</h3>
+          <p>We strictly represent verified international suppliers and ensure raw yarn, fiber, and fabric shipments conform precisely to laboratory specs.</p>
+        </div>
+
+        <div class="card principle-card">
+          <div class="p-num">04</div>
+          <h3>Long-Term Partnership Focus</h3>
+          <p>We prioritize long-term corporate relationships over short-term transactional gain, serving as trusted advisors to both buyers and mills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 5rem 0; }
+    .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .principle-card { position: relative; padding: 2.5rem; }
+    .p-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: rgba(217, 119, 6, 0.25); margin-bottom: 0.5rem; }
+    .principle-card h3 { color: var(--primary-navy); margin-bottom: 0.8rem; }
+    .principle-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; }
+    @media (max-width: 768px) { .principles-grid { grid-template-columns: 1fr; } }
+  </style>
+</Layout>

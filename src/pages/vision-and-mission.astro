@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getMediaUrl } from '../utils/media';
+
+const missionPillars = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+    title: 'Leadership & Quality Excellence',
+    text: 'To gain and maintain a leadership position in the business we operate in by maintaining customer satisfaction, delivering quality products, committing to continuous process improvement and investing in technology, infrastructure and human resources.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: 'Sustainable Returns & Growth',
+    text: 'To maximize returns for our stakeholders by optimal allocation of resources by pursuing growth opportunities in high value markets and ensuring sustainable profitability.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/><line x1="12" y1="18" x2="12" y2="22"/></svg>`,
+    title: 'Best Value Customer Solutions',
+    text: 'To provide the best value products and services to our customers across all yarn, fabric, and textile trading divisions.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    title: 'Strategic Partnerships & Integrity',
+    text: 'To build strategic alliances based on long-term relationships, contract integrity, and mutual progress.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Environmental Stewardship',
+    text: 'To promote eco-friendly textiles, sustainable yarn production, and responsible resource conservation.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>`,
+    title: 'Social Responsibility',
+    text: 'To actively contribute to national economy growth and foster an empowering work culture for employee development.'
+  }
+];
+---
+
+<Layout title="Vision & Mission | Western Traders" activePage="about">
+  <!-- Top Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span class="current">Vision & Mission</span>
+      </div>
+      <h1 class="hero_page_title">Vision & Mission</h1>
+      <p class="hero_subtitle">
+        Our foundational corporate philosophy, sustainable trade commitments, and long-term vision guiding Western Traders.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision Banner Section -->
+  <section class="section-padding vision-section">
+    <div class="container">
+      <div class="vision-box card">
+        <div class="vision-header">
+          <div class="vision-icon-wrapper">
+            <img src={getMediaUrl("/images/vision_icon.png")} alt="Vision Icon" width="70" height="70" class="vision-icon-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+          </div>
+          <div>
+            <span class="section-badge">OUR VISION</span>
+            <h2 class="vision-title">Corporate Vision</h2>
+          </div>
+        </div>
+        <blockquote class="vision-quote">
+          &ldquo;To excel across all our operations and deliver sustainable value to all stakeholders.&rdquo;
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section-padding mission-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">OUR CORE COMMITMENTS</span>
+        <h2 class="section-title">Our Mission</h2>
+        <p class="section-subtitle">
+          Six foundational pillars that define our corporate operational philosophy and customer engagement.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        {missionPillars.map((pillar, idx) => (
+          <div class="card mission-card">
+            <div class="mission-card-header">
+              <span class="mission-number">0{idx + 1}</span>
+              <div class="mission-icon" set:html={pillar.icon} />
+            </div>
+            <h3 class="mission-card-title">{pillar.title}</h3>
+            <p class="mission-card-text">{pillar.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner-section">
+    <div class="container text-center">
+      <h2>Partner with Pakistan's Premier Sourcing House</h2>
+      <p>Discover our range of cotton, compact, open-end yarns, fabrics, and specialty indenting solutions.</p>
+      <div class="cta-buttons">
+        <a href="/products-and-services/" class="btn btn-primary">View Products & Services</a>
+        <a href="/contact/" class="btn btn-secondary">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 4.5rem 0; }
+
+    /* Vision Section */
+    .vision-section {
+      background: var(--bg-surface);
+    }
+    .vision-box {
+      padding: 3rem;
+      border-left: 5px solid var(--accent-gold);
+      background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(10, 25, 47, 0.03) 100%);
+    }
+    .vision-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .vision-icon-wrapper {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-navy-dark);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .vision-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .vision-title {
+      font-size: 1.8rem;
+      color: var(--primary-navy);
+      margin: 0;
+    }
+    .vision-quote {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.5;
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent-amber);
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: var(--bg-slate);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .mission-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition-normal);
+    }
+    .mission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-gold);
+    }
+    .mission-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .mission-number {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      opacity: 0.8;
+    }
+    .mission-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(10, 25, 47, 0.06);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-navy);
+    }
+    .mission-card-title {
+      font-size: 1.2rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.8rem;
+    }
+    .mission-card-text {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    /* CTA Section */
+    .cta-banner-section {
+      background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+      color: #ffffff;
+      padding: 4rem 0;
+    }
+    .cta-banner-section h2 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner-section p {
+      color: var(--text-light);
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.05rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .mission-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .mission-grid { grid-template-columns: 1fr; }
+      .vision-quote { font-size: 1.2rem; }
+    }
+  </style>
+</Layout>

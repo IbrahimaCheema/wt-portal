@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getMediaUrl } from '../utils/media';
+
+const newsArticles = [
+  {
+    id: 'ceo-interview',
+    title: 'Interview of CEO Mr. Hasan Shahid by Ms. Alex Diaz',
+    date: 'January 2025',
+    category: 'Corporate & Executive',
+    image: getMediaUrl('/images/news_interview.png'),
+    summary: 'A recent interview that our CEO Mr. Hasan Shahid gave to Ms. Alex Diaz. She is working on a white paper and has interviewed top leaders in the global corporate textile sourcing market.',
+    featured: true
+  },
+  {
+    id: 'heimtextil-2024',
+    title: 'Heimtextil and Intercot Visit 2024',
+    date: 'January 15, 2024',
+    category: 'International Exhibitions',
+    image: getMediaUrl('/images/news_heimtextil_2024.png'),
+    summary: 'Explore the world of textiles with Western Traders as our CEO, Mr. Hasan Shahid, recently embarked on a transformative journey at Heimtextil 2024 in Germany, followed by an official visit to Intercot S.A. in Spain.',
+    link: '/news/heimtextil-and-intercot-visit-2024/',
+    featured: false
+  },
+  {
+    id: 'qst-lanka',
+    title: 'QST Lanka Visit to Pakistan',
+    date: 'July 6, 2023',
+    category: 'Global Partnerships',
+    image: getMediaUrl('/images/news_qst_lanka.jpg'),
+    summary: 'Delegation from QST Lanka visited Pakistan for high-level meetings with Western Traders team and major textile manufacturers to discuss technical trim solutions.',
+    featured: false
+  },
+  {
+    id: 'heimtextil-lunch',
+    title: 'Attended Heimtex 2023 Event in Germany – Lunch with Intercot’s Director',
+    date: 'January 15, 2023',
+    category: 'Trade Fairs',
+    image: getMediaUrl('/images/news_lunch2.jpg'),
+    summary: 'CEO Mr. Hasan Shahid attended the Heimtex 2023 event in Germany and had a productive lunch meeting with Intercot’s director to discuss upcoming yarn innovations.',
+    featured: false
+  },
+  {
+    id: 'heimtextil-dinner',
+    title: 'Attended Heimtex 2023 Event in Germany – Dinner with German Sales Director',
+    date: 'January 15, 2023',
+    category: 'Trade Fairs',
+    image: getMediaUrl('/images/news_lunch1.jpg'),
+    summary: 'Networking dinner with German sales representatives and Intercot’s Director of Sales during the Heimtex trade exhibition.',
+    featured: false
+  },
+  {
+    id: 'intercot-spain-visit',
+    title: 'Attended Heimtex 2023 Event in Germany – Visited Intercot and Calada in Spain',
+    date: 'January 15, 2023',
+    category: 'International Visits',
+    image: getMediaUrl('/images/news_intercot1.jpg'),
+    summary: 'Executive visit to Intercot and Calada spinning mills in Spain following the Heimtex Germany trade fair.',
+    featured: false
+  },
+  {
+    id: 'kazakhstan-forum-1',
+    title: 'Western Group Participation in Pakistan – Kazakhstan Business Opportunities Forum',
+    date: 'February 23, 2022',
+    category: 'Global Forums',
+    image: getMediaUrl('/images/news_wt_conf.jpg'),
+    summary: 'Western Group’s active participation in the bilateral Pakistan - Kazakhstan Business Opportunities Forum, establishing new cross-border trade avenues.',
+    featured: false
+  },
+  {
+    id: 'kazakhstan-forum-2',
+    title: 'B2B Sessions at Pakistan – Kazakhstan Business Opportunities Forum',
+    date: 'January 21, 2022',
+    category: 'Global Forums',
+    image: getMediaUrl('/images/news_forum_2.jpg'),
+    summary: 'Delegation meetings and corporate B2B sessions during the Pakistan - Kazakhstan trade conference.',
+    featured: false
+  },
+  {
+    id: 'kazakhstan-forum-3',
+    title: 'Announcement: Pakistan – Kazakhstan Business Opportunities Forum',
+    date: 'January 20, 2022',
+    category: 'Global Forums',
+    image: getMediaUrl('/images/news_forum_1.jpg'),
+    summary: 'Official announcement of Western Group’s participation in the upcoming Kazakhstan international trade summit.',
+    featured: false
+  }
+];
+
+const featuredArticle = newsArticles.find(a => a.featured) || newsArticles[0];
+const regularArticles = newsArticles.filter(a => !a.featured);
+---
+
+<Layout title="News & Events | Western Traders" activePage="news">
+  <!-- Top Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span class="current">News & Events</span>
+      </div>
+      <h1 class="hero_page_title">News & Events</h1>
+      <p class="hero_subtitle">
+        Stay informed with official corporate updates, international trade fair visits, CEO interviews, and global partnership developments from Western Traders.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Spotlight Article -->
+  <section class="section-padding featured-news-section">
+    <div class="container">
+      <div class="card featured-news-card">
+        <div class="grid-2-col align-center">
+          <div class="featured-img-box">
+            <img src={featuredArticle.image} alt={featuredArticle.title} class="featured-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+            <span class="badge-spotlight">SPOTLIGHT INTERVIEW</span>
+          </div>
+          <div class="featured-content">
+            <div class="meta-row">
+              <span class="meta-cat">{featuredArticle.category}</span>
+              <span class="meta-date">&bull; {featuredArticle.date}</span>
+            </div>
+            <a href="/news/interview-of-ceo-mr-hasan-shahid-by-ms-alex-diaz/" class="featured-title-link">
+              <h2 class="featured-title">{featuredArticle.title}</h2>
+            </a>
+            <p class="featured-summary">{featuredArticle.summary}</p>
+            <a href="/news/interview-of-ceo-mr-hasan-shahid-by-ms-alex-diaz/" class="btn btn-primary btn-read-more">
+              Watch & Read Full Interview
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Grid & Updates -->
+  <section class="section-padding news-grid-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CORPORATE ARCHIVES</span>
+        <h2 class="section-title">Latest Updates & Exhibitions</h2>
+        <p class="section-subtitle">Browse through our past trade delegations, international visits, and corporate announcements.</p>
+      </div>
+
+      <div class="articles-grid">
+        {regularArticles.map((item) => (
+          <article class="card news-card" id={item.id}>
+            <a href={item.link || `#${item.id}`} class="news-card-img-link">
+              <div class="news-card-img-wrapper">
+                <img src={item.image} alt={item.title} class="news-card-img" loading="lazy" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+                <span class="card-cat-tag">{item.category}</span>
+              </div>
+            </a>
+            <div class="news-card-body">
+              <div class="card-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>{item.date}</span>
+              </div>
+              <a href={item.link || `#${item.id}`} class="news-title-link">
+                <h3 class="news-card-title">{item.title}</h3>
+              </a>
+              {item.summary && <p class="news-card-summary">{item.summary}</p>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 4.5rem 0; }
+    .grid-2-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; }
+
+    /* Featured Spotlight */
+    .featured-news-section { background: var(--bg-surface); }
+    .featured-news-card { padding: 2rem; border-left: 5px solid var(--accent-gold); }
+    .featured-img-box { position: relative; border-radius: var(--radius-md); overflow: hidden; height: 320px; }
+    .featured-img { width: 100%; height: 100%; object-fit: cover; }
+    .badge-spotlight {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent-gold);
+      color: var(--primary-navy-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-full);
+    }
+
+    .meta-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; font-size: 0.88rem; }
+    .meta-cat { color: var(--accent-amber); font-weight: 700; text-transform: uppercase; }
+    .meta-date { color: var(--text-muted); }
+    
+    .featured-title { font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 1rem; line-height: 1.3; }
+    .featured-summary { font-size: 0.98rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-read-more { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+    /* News Grid */
+    .news-grid-section { background: var(--bg-slate); }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+
+    .news-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition-normal);
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-gold);
+    }
+
+    .news-card-img-wrapper { position: relative; height: 210px; overflow: hidden; background: var(--primary-navy-dark); }
+    .news-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .news-card:hover .news-card-img { transform: scale(1.05); }
+
+    .card-cat-tag {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 0.8rem;
+      background: rgba(10, 25, 47, 0.85);
+      color: var(--accent-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(4px);
+    }
+
+    .news-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-date { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .card-date svg { color: var(--accent-gold); }
+
+    .news-card-title { font-size: 1.2rem; color: var(--primary-navy); margin-bottom: 0.8rem; line-height: 1.4; }
+    .news-card-summary { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; }
+
+    @media (max-width: 1024px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-2-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .articles-grid { grid-template-columns: 1fr; }
+      .featured-img-box { height: 220px; }
+    }
+  </style>
+</Layout>

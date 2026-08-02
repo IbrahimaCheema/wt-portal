@@ -1,0 +1,372 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getMediaUrl } from '../utils/media';
+
+const partners = [
+  {
+    id: 'intercot',
+    name: 'INTERCOT, S.A.',
+    location: 'Spain',
+    logo: getMediaUrl('/images/intercot_logo.png'),
+    description: 'INTERCOT, S.A. is a spinning mill founded in 1986, specialized in the production of thick, bulky Open End yarns in 100% Cotton, Linen 100%, Cotton & Linen blends and Cotton & Hemp blends, with a production capacity of 7,000 Tm./year. Their company culture is based on continuous improvement of their processes, constant investment in new machines with the latest technological advances and innovation in new products to adapt them to changing market conditions. Their business approach is based on long-term development; establishing business relationships based on mutual trust with their customers.',
+    letters: [
+      {
+        title: 'INTERCOT Letter of Agreement',
+        previewImg: getMediaUrl('/images/intercot_letter.jpg'),
+        pdfUrl: getMediaUrl('/docs/intercot_letter.pdf')
+      }
+    ]
+  },
+  {
+    id: 'qst',
+    name: 'QST Industries',
+    location: 'USA / Global (60+ Countries)',
+    logo: getMediaUrl('/images/qst_logo.png'),
+    description: 'QST Industries is a family owned and operated company that dates back to the year 1880 where they started as a horse and cart traveling the streets of Chicago selling textiles to local tailors. Today, they have expanded to over 60 countries across the globe for sourcing, selling, and manufacturing. They have over 700 employees around the world that make up their extended family and are growing every day. If you take a look at the clothing you are wearing right now, there is a very good chance that a component of your pants, your shirt or your jacket were made by QST. They are behind the seams of every major retailer. Be it the pocketing, the interlining, the waistbands, the linings, or the elastics, each of their products are the construction components that make up your garment.',
+    letters: [
+      {
+        title: 'QST Letter of Agreement (2024)',
+        previewImg: getMediaUrl('/images/qst_letter_2.jpg'),
+        pdfUrl: getMediaUrl('/docs/qst_letter_2.pdf')
+      },
+      {
+        title: 'QST Agency Representation Agreement',
+        previewImg: getMediaUrl('/images/qst_letter_1.jpg'),
+        pdfUrl: getMediaUrl('/docs/qst_letter_1.pdf')
+      }
+    ]
+  },
+  {
+    id: 'naveena',
+    name: 'Naveena Industries',
+    location: 'Pakistan / Global Export',
+    logo: getMediaUrl('/images/naveena_logo.jpg'),
+    description: 'Based in Pakistan, Naveena produces yarn and fabric and offers full-package solutions to traders, importers and major brands. The company was founded in 1967 and has been exporting its products all over the world since then. Product design and development is conducted by a team of highly qualified management and technical staff as well as tech designers, cost analysts and specialists that create products as per customers\' requests. The operating objective is to create close coordination between all divisions. Every unit operates in the most efficient manner in order to achieve competitive prices, timely delivery and quality products.',
+    letters: [
+      {
+        title: 'Naveena Industries Authorization Letter',
+        previewImg: getMediaUrl('/images/naveena_letter.jpg'),
+        pdfUrl: getMediaUrl('/docs/naveena_letter.pdf')
+      }
+    ]
+  }
+];
+---
+
+<Layout title="Global Collaborations | Western Traders" activePage="collaborations">
+  <!-- Top Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <a href="/about/">About</a> <span>&rsaquo;</span> <span class="current">Collaborations</span>
+      </div>
+      <h1 class="hero_page_title">Global Collaborations</h1>
+      <p class="hero_subtitle">
+        Western Traders is the exclusive authorized agent for leading international textile spinners and manufacturers. Following are our exclusive business partners whom we have served efficiently over the years.
+      </p>
+    </div>
+  </section>
+
+  <!-- Partner Showcases & Full-View PDF Letters -->
+  <section class="section-padding partners-section">
+    <div class="container">
+      {partners.map((partner) => (
+        <div class="partner-card card" id={partner.id}>
+          <!-- Partner Header Grid -->
+          <div class="partner-header-grid">
+            <div class="partner-logo-box">
+              <img src={partner.logo} alt={`${partner.name} Logo`} class="partner-logo-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+              <span class="partner-location-tag">{partner.location}</span>
+            </div>
+            <div class="partner-info-box">
+              <h2 class="partner-name">{partner.name}</h2>
+              <p class="partner-description">{partner.description}</p>
+            </div>
+          </div>
+
+          <!-- PROMINENT FULL VIEW PDF LETTERS SECTION -->
+          <div class="pdf-documents-wrapper">
+            <div class="pdf-doc-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <h3>Official Agreement & Authorization Letters</h3>
+            </div>
+
+            <div class={`pdf-letters-grid ${partner.letters.length > 1 ? 'multi-col' : 'single-col'}`}>
+              {partner.letters.map((doc) => (
+                <div class="pdf-document-card">
+                  <div class="pdf-card-title-bar">
+                    <span class="pdf-badge">OFFICIAL DOCUMENT</span>
+                    <h4>{doc.title}</h4>
+                  </div>
+
+                  <!-- Full View Prominent Image Preview Frame -->
+                  <div class="pdf-full-preview-frame">
+                    <a href={doc.pdfUrl} target="_blank" rel="noopener noreferrer" class="pdf-preview-link" title="Click to view full PDF document">
+                      <img src={doc.previewImg} alt={doc.title} class="pdf-letter-full-img" loading="eager" />
+                      <div class="pdf-hover-overlay">
+                        <span class="zoom-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </span>
+                        <span>Click to Open Full PDF</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="pdf-action-bar">
+                    <a href={doc.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-download-pdf">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      View / Download PDF Letter
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Link to Gallery -->
+  <section class="gallery-cta-section">
+    <div class="container text-center">
+      <h3>Explore Our Event & Exhibition Highlights</h3>
+      <p>For more photos, videos, and international trade fair visits, visit our gallery.</p>
+      <a href="/gallery/" class="btn btn-secondary">Visit Photo & Video Gallery</a>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 4rem 0; }
+    .partners-section { background: var(--bg-slate); }
+
+    .partner-card {
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .partner-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .partner-header-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 2rem;
+    }
+    .partner-logo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-logo-img {
+      max-height: 90px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 0.8rem;
+    }
+    .partner-location-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .partner-name {
+      font-size: 1.8rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.8rem;
+    }
+    .partner-description {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Prominent PDF Letters Section */
+    .pdf-documents-wrapper {
+      background: rgba(10, 25, 47, 0.02);
+      border: 1px solid rgba(162, 214, 41, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+    }
+    .pdf-doc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+    .pdf-doc-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .pdf-doc-header svg {
+      color: var(--accent-gold);
+    }
+
+    .pdf-letters-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .pdf-letters-grid.single-col {
+      grid-template-columns: minmax(300px, 680px);
+      justify-content: center;
+    }
+    .pdf-letters-grid.multi-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pdf-document-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-normal);
+    }
+    .pdf-document-card:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: var(--accent-gold);
+    }
+
+    .pdf-card-title-bar {
+      padding: 1rem 1.25rem;
+      background: var(--primary-navy-dark);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .pdf-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--accent-green);
+    }
+    .pdf-card-title-bar h4 {
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* FULL VIEW PROMINENT PREVIEW */
+    .pdf-full-preview-frame {
+      position: relative;
+      background: #f1f5f9;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .pdf-preview-link {
+      display: block;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .pdf-letter-full-img {
+      width: 100%;
+      height: auto;
+      max-height: 720px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .pdf-preview-link:hover .pdf-letter-full-img {
+      transform: scale(1.02);
+    }
+
+    .pdf-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 47, 0.75);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .pdf-preview-link:hover .pdf-hover-overlay {
+      opacity: 1;
+    }
+    .zoom-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-gold);
+      color: var(--primary-navy-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pdf-action-bar {
+      padding: 1.2rem;
+      background: #ffffff;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: center;
+    }
+    .btn-download-pdf {
+      width: 100%;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .gallery-cta-section {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 3rem 0;
+    }
+    .gallery-cta-section h3 {
+      color: #ffffff;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .gallery-cta-section p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .partner-header-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .partner-logo-box {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+      .pdf-letters-grid.multi-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>

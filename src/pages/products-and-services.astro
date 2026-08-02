@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const yarnProducts = [
+  { name: 'Ring Spun & Compact Yarns', desc: 'Cotton Carded and Combed yarns produced on state-of-the-art Compact and Conventional ring spinning frames.', tags: ['Ring Spun', 'Compact', 'Combed'] },
+  { name: 'Extra Long Staple (ELS) Yarns', desc: 'Ultra-premium yarns crafted from Supima, Egyptian Giza, and CIS Extra Long Staple cotton fibers.', tags: ['Supima', 'Giza', 'ELS'] },
+  { name: 'Open End (OE) & Vortex Yarns', desc: 'Heavy and medium counts manufactured on Open End rotor and Murata Vortex Spinning (MVS) systems.', tags: ['Open End', 'MVS', 'Coarse'] },
+  { name: 'Slub & Fancy Specialty Yarns', desc: 'Custom irregular slubs, neppy yarns, and decorative fancy effects engineered to client specs.', tags: ['Slub', 'Neppy', 'Custom'] },
+  { name: 'Core Spun & Stretch Yarns', desc: 'Core spun yarns incorporating high-elasticity Spandex and Invista Lycra for high-performance stretch.', tags: ['Lycra', 'Spandex', 'Stretch'] },
+  { name: 'Organic & Recycled Yarns', desc: 'Certified GOTS organic cotton and GRS recycled post-consumer regenerated yarns for eco-conscious brands.', tags: ['Organic', 'Recycled', 'Eco'] },
+  { name: 'Regenerated Fiber Yarns', desc: 'Silky smooth yarns produced from Tencel, Modal, Bamboo, Viscose, and Rayon eco-fibers.', tags: ['Tencel', 'Modal', 'Bamboo'] },
+  { name: 'Linen & Hemp Blended Yarns', desc: 'Exclusive natural & bleached 100% Linen (Flax) and Cotton-Hemp blended yarns from Intercot (Spain).', tags: ['Linen', 'Hemp', 'Intercot'] }
+];
+
+const fabricProducts = [
+  { name: 'Pocketing & Lining Fabrics', desc: 'Nominated pocketing fabric for global fashion leaders including Levi’s, Zara, H&M, and Esprit in collaboration with Naveena Industries.', tags: ['Levi’s Nominated', 'Zara', 'H&M'] },
+  { name: 'Air-Jet Weaving Greige Fabrics', desc: 'High-speed air-jet loom 100% Cotton & Poly-Cotton blended greige fabrics for apparel & home textiles.', tags: ['Air-Jet', 'Greige', '100% Cotton'] },
+  { name: 'High Thread Count Sheeting (T200–T800)', desc: 'Luxury Percale, Poplin, Satin, and Stripe Satin fabrics ranging from T200 up to T800 thread counts.', tags: ['T200-T800', 'Satin', 'Percale'] },
+  { name: 'Workwear & Industrial Fabrics', desc: 'Heavy Canvas Duck, Half Panama, Twills, Drills, and specialized Fire Retardant (FR) protective fabrics.', tags: ['Workwear', 'FR', 'Canvas'] },
+  { name: 'Rigid & Mechanical Stretch Twills', desc: 'High-durability rigid twills and modern mechanical stretch fabrics designed for premium casualwear and denim.', tags: ['Stretch', 'Twill', 'Denim'] }
+];
+
+const specialtyItems = [
+  { name: 'Q-Loop Anti-Fray Belt Loop Fusing', desc: 'QST patented Q-Loop anti-fray tape for belt loop construction, preventing edge unraveling in denim pants.', brand: 'QST (USA)' },
+  { name: 'Ban-Roll Waistband Stiffeners', desc: 'Non-roll waistband stiffeners engineered to prevent waistband rollover in formal trousers and jeans.', brand: 'QST (USA)' },
+  { name: 'Sonic Sealed & Quick Stretch Elastics', desc: 'Precision sonic sealed edge linings and quick-stretch high-tenacity elastics for waistbands & activewear.', brand: 'QST (USA)' },
+  { name: '100% Natural Linen Yarns', desc: 'Premium Spanish flax linen yarns imported for Sapphire Group and leading Pakistani luxury textile houses.', brand: 'Intercot (Spain)' }
+];
+---
+
+<Layout title="Products & Services | Western Traders" activePage="products">
+  <!-- Top Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span class="current">Products & Services</span>
+      </div>
+      <h1 class="hero_page_title">Products & Services</h1>
+      <p class="hero_subtitle">
+        Engineered textile sourcing, premium yarn spinning, technical fabric weaves, and global garment construction components.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Value Proposition -->
+  <section class="section-padding overview-section">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div>
+          <span class="section-badge">INTEGRATED SOURCING EXCELLENCE</span>
+          <h2 class="section-title">Micro-Managed Indenting & After-Sales Support</h2>
+          <p class="body-lead">
+            Western deals in a vast range of products for both local and cross-border international markets. Our differential advantage lies in our strong follow-up and ability to micro-manage every stage of the supply chain.
+          </p>
+          <p class="body-text">
+            We strike a precise balance between suppliers and buyers, ensuring dedicated after-sales support and building long-term corporate relationships rather than one-off trades.
+          </p>
+          <div class="value-bullets">
+            <div class="val-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Quality Inspection & On-Site Audits</span>
+            </div>
+            <div class="val-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Custom R&D and Exclusive Product Developments</span>
+            </div>
+            <div class="val-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Nomination Programs for Global Brands (Levi’s, Zara, H&M)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card overview-card">
+          <img src="/images/textile_yarn_hero_banner.png" alt="Textile Yarn Cones" class="overview-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+          <div class="card-caption">
+            <h4>Global Sourcing Network</h4>
+            <p>Sourced from USA, Spain, Mexico, China, Vietnam, Hong Kong & Pakistan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category 1: Yarns -->
+  <section class="section-padding yarn-section" id="yarns">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CATEGORY 01</span>
+        <h2 class="section-title">Yarn Portfolio</h2>
+        <p class="section-subtitle">Comprehensive range of Ring Spun, Vortex (MVS), Open End (OE), and Compact yarns in 100% Cotton and synthetic blends.</p>
+      </div>
+
+      <div class="products-grid">
+        {yarnProducts.map((item) => (
+          <div class="card prod-card">
+            <div class="prod-badge-row">
+              {item.tags.map((tag) => (
+                <span class="tag-pill">{tag}</span>
+              ))}
+            </div>
+            <h3 class="prod-title">{item.name}</h3>
+            <p class="prod-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Category 2: Fabrics -->
+  <section class="section-padding fabric-section" id="fabrics">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CATEGORY 02</span>
+        <h2 class="section-title">Woven & Apparel Fabrics</h2>
+        <p class="section-subtitle">Air-jet woven greige and finished fabrics ranging from T200 to T800 thread counts for apparel, home textiles, and workwear.</p>
+      </div>
+
+      <div class="products-grid">
+        {fabricProducts.map((item) => (
+          <div class="card prod-card fabric-card">
+            <div class="prod-badge-row">
+              {item.tags.map((tag) => (
+                <span class="tag-pill tag-gold">{tag}</span>
+              ))}
+            </div>
+            <h3 class="prod-title">{item.name}</h3>
+            <p class="prod-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Category 3: Specialty Items & Trims -->
+  <section class="section-padding specialty-section" id="specialty">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CATEGORY 03</span>
+        <h2 class="section-title">Specialty Items & Garment Accessories</h2>
+        <p class="section-subtitle">Authorized representation of QST (USA) and Intercot (Spain) value-add construction components for world-class apparel.</p>
+      </div>
+
+      <div class="specialty-grid">
+        {specialtyItems.map((item) => (
+          <div class="card spec-card">
+            <span class="brand-tag">{item.brand}</span>
+            <h3 class="spec-title">{item.name}</h3>
+            <p class="spec-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner-section">
+    <div class="container text-center">
+      <h2>Have Specific Yarn or Fabric Requirements?</h2>
+      <p>Send us your specifications, required yarn counts, fiber compositions, or loom weave details today.</p>
+      <a href="/contact/" class="btn btn-primary">Submit Technical Inquiry</a>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 4.5rem 0; }
+    .grid-2-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; }
+
+    /* Overview Section */
+    .overview-section { background: var(--bg-surface); }
+    .body-lead { font-size: 1.1rem; color: var(--primary-navy); font-weight: 600; line-height: 1.7; margin-bottom: 1rem; }
+    .body-text { font-size: 0.96rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    
+    .value-bullets { display: flex; flex-direction: column; gap: 0.8rem; }
+    .val-item { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; font-weight: 600; color: var(--primary-navy); }
+    .val-item svg { color: var(--accent-gold); flex-shrink: 0; }
+
+    .overview-card { padding: 0; overflow: hidden; }
+    .overview-img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .card-caption { padding: 1.25rem 1.5rem; background: var(--primary-navy-dark); color: #ffffff; }
+    .card-caption h4 { color: #ffffff; margin-bottom: 0.3rem; }
+    .card-caption p { color: var(--text-light); font-size: 0.85rem; margin: 0; }
+
+    /* Products Grid */
+    .yarn-section { background: var(--bg-slate); }
+    .fabric-section { background: var(--bg-surface); }
+    .specialty-section { background: var(--bg-slate); }
+
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .prod-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition-normal);
+    }
+    .prod-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-gold);
+    }
+    .prod-badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+    .tag-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      background: rgba(10, 25, 47, 0.08);
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tag-gold {
+      background: rgba(217, 119, 6, 0.12);
+      color: var(--accent-amber);
+    }
+    .prod-title { font-size: 1.15rem; color: var(--primary-navy); margin-bottom: 0.6rem; }
+    .prod-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; }
+
+    /* Specialty Grid */
+    .specialty-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; margin-top: 2rem; }
+    .spec-card {
+      padding: 2rem;
+      border-left: 4px solid var(--accent-gold);
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent-amber);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .spec-title { font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 0.6rem; }
+    .spec-desc { font-size: 0.94rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+    /* CTA Section */
+    .cta-banner-section {
+      background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+      color: #ffffff;
+      padding: 4rem 0;
+    }
+    .cta-banner-section h2 { color: #ffffff; font-size: 2rem; margin-bottom: 0.8rem; }
+    .cta-banner-section p { color: var(--text-light); max-width: 680px; margin: 0 auto 2rem auto; font-size: 1.05rem; }
+
+    @media (max-width: 1200px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .grid-2-col, .specialty-grid, .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</Layout>

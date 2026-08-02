@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getMediaUrl } from '../../utils/media';
+---
+
+<Layout title="Heimtextil and Intercot Visit 2024 | Western Traders News" activePage="news">
+  <!-- Top Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <span>&rsaquo;</span> <a href="/news/">News & Events</a> <span>&rsaquo;</span> <span class="current">Heimtextil 2024 Visit</span>
+      </div>
+      <h1 class="hero_page_title">Heimtextil and Intercot Visit 2024</h1>
+      <div class="article-meta-banner">
+        <span class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          January 15, 2024
+        </span>
+        <span class="meta-sep">&bull;</span>
+        <span class="meta-item">Category: International Exhibitions & Trade Fairs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Detail Section -->
+  <section class="section-padding article-detail-section">
+    <div class="container">
+      <div class="article-container card">
+        <div class="article-featured-image-box">
+          <img src={getMediaUrl("/images/news_heimtextil_2024.png")} alt="Heimtextil and Intercot Visit 2024" class="article-featured-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+        </div>
+
+        <div class="article-body">
+          <p class="body-lead">
+            Explore the world of textiles with Western Traders as our CEO, <strong>Mr. Hasan Shahid</strong>, recently embarked on a transformative journey at <strong>Heimtextil 2024</strong> in Germany.
+          </p>
+
+          <p class="body-text">
+            This prestigious international textile trade fair provided a dynamic platform for Mr. Shahid to engage with a diverse array of Pakistani and European buyers and sellers. Accompanied by <strong>Mr. Ramon</strong>, the Director of Intercot Mill from Spain, fruitful meetings were held with industry giants such as <strong>Umer Group of Companies, Ahmed Fine, Alkaram, Orient, Sapphire Group</strong>, and more.
+          </p>
+
+          <p class="body-text">
+            Discussions centered around promising business opportunities, forging alliances, and exploring new yarn & fabric collaborations. Taking the connection further, Mr. Hasan Shahid extended his travels to Barcelona, visiting the renowned Intercot Mill, reinforcing our commitment to fostering global partnerships.
+          </p>
+
+          <p class="body-text">
+            Western Traders remains at the forefront of textile trading, indenting, import, and export, continuously exploring avenues for growth and innovation in the ever-evolving global textile industry.
+          </p>
+
+          <div class="article-highlights-box card">
+            <h4>Key Industry Engagements</h4>
+            <ul>
+              <li><strong>Top Companies Met:</strong> Sapphire Group, Umer Group of Companies, Ahmed Fine, Alkaram, Orient.</li>
+              <li><strong>International Partners:</strong> Mr. Ramon (Director, Intercot Mill Spain).</li>
+              <li><strong>Destinations Visited:</strong> Frankfurt (Germany) & Barcelona (Spain).</li>
+            </ul>
+          </div>
+
+          <div class="article-navigation-bar">
+            <a href="/news/" class="btn btn-secondary">
+              &larr; Back to News & Events
+            </a>
+            <a href="/gallery/" class="btn btn-primary">
+              View Photo & Video Gallery &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-padding { padding: 4.5rem 0; }
+    .article-detail-section { background: var(--bg-slate); }
+    
+    .article-container {
+      padding: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    
+    .article-meta-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--accent-gold);
+      font-size: 0.95rem;
+      margin-top: 0.8rem;
+    }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+
+    .article-featured-image-box {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+    .article-featured-img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .body-lead {
+      font-size: 1.15rem;
+      color: var(--primary-navy);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .body-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-highlights-box {
+      padding: 1.5rem;
+      background: var(--bg-slate);
+      border-left: 4px solid var(--accent-gold);
+      margin: 2rem 0 2.5rem 0;
+    }
+    .article-highlights-box h4 {
+      color: var(--primary-navy);
+      margin-bottom: 0.8rem;
+    }
+    .article-highlights-box ul {
+      margin: 0 0 0 1.25rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .article-navigation-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      .article-container { padding: 1.5rem; }
+    }
+  </style>
+</Layout>
