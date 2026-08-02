@@ -23,5 +23,4 @@ Thumbs.db
 .idea/
 
 # Large media served from Cloudflare R2 bucket (docs.western.com.pk)
-public/videos/
-
+public/*
