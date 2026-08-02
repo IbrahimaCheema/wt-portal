@@ -46,7 +46,7 @@ import { getMediaUrl } from '../utils/media';
         <!-- Col 2: What We Do -->
         <div class="card about-content-card">
           <div class="card-img-wrapper">
-            <img src="/images/about_new.jpg" alt="What We Do - Western Traders" width="695" height="447" class="card-feature-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+            <img src={getMediaUrl("/images/about_new.jpg")} alt="What We Do - Western Traders" width="695" height="447" class="card-feature-img" onerror={`this.onerror=null; this.src='${getMediaUrl('/images/wt_header_logo.png')}'`} />
           </div>
           <h2 class="card-title">What We Do</h2>
           <p class="body-text">

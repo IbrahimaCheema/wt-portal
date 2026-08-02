@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getMediaUrl } from '../utils/media';
 
 const yarnProducts = [
   { name: 'Ring Spun & Compact Yarns', desc: 'Cotton Carded and Combed yarns produced on state-of-the-art Compact and Conventional ring spinning frames.', tags: ['Ring Spun', 'Compact', 'Combed'] },
@@ -72,7 +73,7 @@ const specialtyItems = [
         </div>
 
         <div class="card overview-card">
-          <img src="/images/textile_yarn_hero_banner.png" alt="Textile Yarn Cones" class="overview-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
+          <img src={getMediaUrl("/images/textile_yarn_hero_banner.png")} alt="Textile Yarn Cones" class="overview-img" onerror="this.onerror=null; this.src='/images/wt_header_logo.png'" />
           <div class="card-caption">
             <h4>Global Sourcing Network</h4>
             <p>Sourced from USA, Spain, Mexico, China, Vietnam, Hong Kong & Pakistan.</p>

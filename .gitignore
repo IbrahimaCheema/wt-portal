@@ -24,3 +24,5 @@ Thumbs.db
 
 # Large media served from Cloudflare R2 bucket (docs.western.com.pk)
 public/*
+
+scripts/*

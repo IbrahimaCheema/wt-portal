@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { getMediaUrl } from '../utils/media';
 
 interface Props {
   title?: string;
@@ -14,6 +15,9 @@ const {
   description = "Western Traders - Established in 2002. Leading corporate sourcing firm for textile yarns, fibers, fabrics, denim, and apparel accessories with global collaborations.",
   activePage = "home"
 } = Astro.props;
+
+const faviconUrl = getMediaUrl("/images/favicon-32.png");
+const ogImageUrl = getMediaUrl("/images/wt_header_logo.png");
 ---
 
 <!html>
@@ -21,7 +25,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/images/favicon-32.png" />
+    <link rel="icon" type="image/png" href={faviconUrl} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -33,7 +37,7 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/wt_header_logo.png" />
+    <meta property="og:image" content={ogImageUrl} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
